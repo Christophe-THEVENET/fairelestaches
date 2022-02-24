@@ -14,7 +14,7 @@ function connect() // connecte le site web à la BDD
     try {
         // On crée un objet PDO à l'aide des identifiants de connexion à la BDD
         $cont = new PDO(
-            "mysql:host={$dbHost};dbname={$dbName};port={$port}", // nouvell concaténation avec accolade 
+            "mysql:host={$dbHost};dbname={$dbName};port={$port}", // nouvelle concaténation avec accolade 
             $dbUsername,
             $dbUserPassword
         );
