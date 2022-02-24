@@ -15,6 +15,9 @@ foreach ($pdo->query("SELECT * FROM `list` ORDER BY name") as $list) {
 
 
     require './templates/card.php';
+
+
+   
 }
 ?>
 
