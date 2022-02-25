@@ -10,10 +10,26 @@
     <title>fairelestaches</title>
 </head>
 
-<header class="h-50 p-3 mb-5 bg-light text-dark shadow text-center">
+
+
+
+
+<body class="bg-light ">
+
+<header class="h-50 p-3 mb-4 bg-light text-dark shadow text-center">
     <h1>fairelestaches.com</h1>
 </header>
 
+<div class="container">
 
 
-<body class="bg-light">
+
+<?php
+
+// ---------------------- NAVBAR ----------------------------------
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/nav.php';
+// ----------------------------------------------------------------
+
+?>
+
+</div>

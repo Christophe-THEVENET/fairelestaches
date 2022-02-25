@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/model/database.php';
 $pdo = connect();
 ?>
 
-<main class=" container d-flex justify-content-around p-1 flex-wrap">
+<main class="  d-flex  justify-content-around p-1 flex-wrap">
 
 
 
@@ -24,7 +24,6 @@ $pdo = connect();
     ?>
 
 </main>
-<a href="./pages/createList.php" class="btn btn-primary m-3">Créer une liste</a>
 
 
 
