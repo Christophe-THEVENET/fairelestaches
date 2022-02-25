@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/model/database.php';
 $pdo = connect();
 ?>
 
-<main class="  d-flex  justify-content-around p-1 flex-wrap">
+<main class="  d-flex  justify-content-around p-1 flex-wrap container">
 
 
 

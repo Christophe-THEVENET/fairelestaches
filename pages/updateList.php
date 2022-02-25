@@ -25,31 +25,17 @@ if ($_POST) { // si on a un envoi formulaire = click btn submit
 
     // redirection sur la page index.php côté client en Javascript puisque si y a $_POST
     //c'est qu'il y a envoi du formulaire
-
-    echo  '<script>window.location.href = "../index.php"</script>';
 ?>
-
-
-
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        </div>
-    </div>
-
-
+    <script>
+        window.location.href = '../index.php'
+    </script>
 
 <?php
 }
 
 
-
-
-
-
-// ---------------------- FORM -----------------------------
-require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/formCreateList.php';
+// ---------------------- FORM UPDATE LIST -----------------------------
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/formUpdateList.php';
 // -----------------------------------------------------------
 
 
