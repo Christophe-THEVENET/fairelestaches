@@ -4,9 +4,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
 // ----------------------------------------------------------------
 ?>
 
-<div class="alert bg-gradient-primary m-1 mb-5" role="alert">
-    Créer une liste de taches
-</div>
 
 
 <?php
@@ -29,10 +26,9 @@ if ($_POST) { // si on a un envoi formulaire = click btn submit
     $req->bindParam(":name", $name, PDO::PARAM_STR); // on type en string
     $req->bindParam(":color", $color, PDO::PARAM_STR); // on type en string
     $req->execute();
-    // redirection sur la page index.php côté client en Javascript puisque si y a $_POST
+   
+ // redirection sur la page index.php côté client en Javascript puisque si y a $_POST
     //c'est qu'il y a envoi du formulaire
-
-
 ?>
     <script>
         window.location.href = '../index.php'
