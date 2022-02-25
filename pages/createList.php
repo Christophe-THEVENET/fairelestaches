@@ -8,11 +8,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
     Créer une liste de taches
 </div>
 
+
 <?php
 
-
-
-// -----CONNECT BDD ET ENVOI FORM -------
+// ______ connect / envoi nouvelle list -> BDD _______
 
 if ($_POST) { // si on a un envoi formulaire = click btn submit
     require_once $_SERVER['DOCUMENT_ROOT'] . '/model/database.php';
@@ -22,14 +21,18 @@ if ($_POST) { // si on a un envoi formulaire = click btn submit
     $color = $_POST['color'];
 
     // les backtips sont très importants: `list`
-    $sql = "INSERT INTO `list` (name, color) VALUES ('{$name}', '{$color}')"; // requete SQL
+    $sql = "INSERT INTO `list` (name, color) VALUES (:name, :color)"; // requete SQL !!! les : pour securiser
     /* var_dump($sql); pour débuger*/
-    $pdo->query($sql); // insertion en BDD
-
-
-
+    //$pdo->query($sql); //  pas sécurisé insertion en BDD
+    // methode sécurisé:
+    $req = $pdo->prepare($sql);
+    $req->bindParam(":name", $name, PDO::PARAM_STR); // on type en string
+    $req->bindParam(":color", $color, PDO::PARAM_STR); // on type en string
+    $req->execute();
     // redirection sur la page index.php côté client en Javascript puisque si y a $_POST
     //c'est qu'il y a envoi du formulaire
+
+
 ?>
     <script>
         window.location.href = '../index.php'
@@ -37,7 +40,6 @@ if ($_POST) { // si on a un envoi formulaire = click btn submit
 
 <?php
 }
-
 
 
 // ---------------------- FORM -----------------------------
@@ -48,3 +50,4 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form.php';
 // ---------------------- FOOTER -----------------------------
 require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php';
 // -----------------------------------------------------------
+
