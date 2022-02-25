@@ -1,44 +1,33 @@
 <?php
+// ---------------------- HEADER ----------------------------------
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
+// ----------------------------------------------------------------
 
-//////////// HEADER /////////////////////
-require_once './templates/header.php'; //
-////////////////////////////////////////
+
 
 // ---- CONNECT DATABASE ------
-include "./model/database.php";
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/model/database.php';
 $pdo = connect();
 ?>
 
-<main class="d-flex justify-content-around p-5 flex-wrap">
+<main class=" container d-flex justify-content-around p-1 flex-wrap">
 
     <?php
     foreach ($pdo->query("SELECT * FROM `list` ORDER BY name") as $list) {
-
-
-
-
-        //////////// CARD ////////////////
-        require './templates/card.php'; //
-        /////////////////////////////////
-
-
+        // ---------------------- FOOTER -----------------------------
+        include $_SERVER['DOCUMENT_ROOT'] . '/templates/card.php';
+        // -----------------------------------------------------------
     }
     ?>
-</main>
 
-<a href="./pages/createList.php" class="btn btn-primary m-5">Créer une liste</a>
+</main>
+<a href="./pages/createList.php" class="btn btn-primary m-3">Créer une liste</a>
 
 
 
 
 <?php
-
-
-
-
-//////////// FOOTER /////////////////////
-require_once './templates/footer.php'; //
-////////////////////////////////////////
-
+// ---------------------- FOOTER -----------------------------
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php';
+// -----------------------------------------------------------
 ?>
