@@ -1,7 +1,7 @@
 <?php
-// ---------- HEADER -----------------
-require_once '../templates/header.php';
-
+//////////// HEADER /////////////////////
+require_once '../templates/header.php'; //
+/////////////////////////////////////////
 ?>
 
 <div class="alert alert-dark m-5 text-center" role="alert">
@@ -12,7 +12,7 @@ require_once '../templates/header.php';
 
 
 
-// ----------CONNECT BDD ET ENVOI FORM ----------------
+// -----CONNECT BDD ET ENVOI FORM -------
 
 if ($_POST) {
     include './database.php';
@@ -29,9 +29,10 @@ if ($_POST) {
 
 
 
-// ---------- FORMULAIRE-----------------
-require_once '../templates/form.php';
+///////// FORMULAIRE ///////////////////
+require_once '../templates/form.php'; //
+///////////////////////////////////////
 
-
-// ---------- FOOTER -----------------
-require_once '../templates/footer.php';
+//////////// FOOTER /////////////////////
+require_once '../templates/footer.php';//
+////////////////////////////////////////
